@@ -8,7 +8,7 @@ import 'package:flutter_get_test/service/url.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  var userList = List<Datum>().obs;
+  var userList = [].obs;
 
   @override
   void onInit() {
@@ -31,7 +31,6 @@ class HomeController extends GetxController {
       UserListModel userListModel =
           UserListModel.fromJson(json.decode(value.body));
       userList.value = userListModel.data;
-      print('USer; ${userList[0].email}');
       Get.back();
     }).catchError((e) => print(e));
   }
