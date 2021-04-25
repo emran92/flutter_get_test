@@ -30,13 +30,13 @@ class HomeView extends StatelessWidget {
                   itemCount: _homeController.userList.length,
                   itemBuilder: (context, index) {
                     return ListTile(
-                      title: Text(_homeController.userList[index].firstName),
-                      subtitle: Text(_homeController.userList[index].email),
-                      leading: Image.network(
-                        _homeController.userList[index].avatar,
-                        width: 50,
-                        height: 50,
-                        fit: BoxFit.contain,
+                      title: Text(_homeController.userList[index].firstName,style: GoogleFonts.exo2(fontWeight: FontWeight.w500),),
+                      subtitle: Text(_homeController.userList[index].email,style: GoogleFonts.exo2(fontWeight: FontWeight.normal),),
+                      leading: CircleAvatar(
+                        radius: 30,
+                        foregroundImage: NetworkImage('${_homeController.userList[index].avatar}'),
+                        child: Container(
+                        )
                       ),
                       trailing: IconButton(
                         onPressed: () {
